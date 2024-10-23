@@ -3,7 +3,8 @@ import useHotel from '@components/hotel/hooks/useHotel'
 import Carousel from '@components/hotel/Carousel'
 
 import Top from '@shared/Top'
-import Contents from '@/components/hotel/Contents'
+import Contents from '@components/hotel/Contents'
+import Rooms from '@components/hotel/Rooms'
 
 export default function HotelPage() {
   const { id } = useParams() as { id: string }
@@ -21,6 +22,7 @@ export default function HotelPage() {
     <div>
       <Top title={name} subTitle={comment} />
       <Carousel images={images} />
+      <Rooms hotelId={id} />
       <Contents contents={contents} />
     </div>
   )

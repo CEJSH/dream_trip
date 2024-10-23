@@ -7,5 +7,5 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
-  "cSpell.words": ["craco", "Swiper"]
+  "cSpell.words": ["craco", "firestore", "Swiper"]
 }
