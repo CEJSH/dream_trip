@@ -56,6 +56,7 @@ const RAW_RUNTIME_STATE =
           ["react-query", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:3.39.3"],\
           ["react-router-dom", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:6.27.0"],\
           ["react-scripts", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:5.0.1"],\
+          ["swiper", "npm:11.1.14"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
         ],\
@@ -9925,6 +9926,7 @@ const RAW_RUNTIME_STATE =
           ["react-query", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:3.39.3"],\
           ["react-router-dom", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:6.27.0"],\
           ["react-scripts", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:5.0.1"],\
+          ["swiper", "npm:11.1.14"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
         ],\
@@ -19019,6 +19021,15 @@ const RAW_RUNTIME_STATE =
           ["csso", "npm:4.2.0"],\
           ["picocolors", "npm:1.1.1"],\
           ["stable", "npm:0.1.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["swiper", [\
+      ["npm:11.1.14", {\
+        "packageLocation": "./.yarn/cache/swiper-npm-11.1.14-8126fa478a-a1075cbd22.zip/node_modules/swiper/",\
+        "packageDependencies": [\
+          ["swiper", "npm:11.1.14"]\
         ],\
         "linkType": "HARD"\
       }]\
