@@ -5,21 +5,32 @@ import Flex from './Flex'
 import Button from './Button'
 import { colors } from '@styles/colorPalette'
 import { useCallback } from 'react'
+import useUser from '@hooks/auth/useUser'
 
 export default function Navbar() {
   const location = useLocation()
   const showSignButton =
     ['/signup', '/signin'].includes(location.pathname) === false
 
-  //@TODO
-  const user = null
+  const user = useUser()
 
   const renderButton = useCallback(() => {
     if (user != null) {
+      console.log(user.photoURL)
       return (
         <Link to="/my">
           {/* @TODO */}
-          <img alt="" src="" />
+          <img
+            alt="userImage"
+            src={
+              user.photoURL ??
+              'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-64.png'
+            }
+            crossOrigin="anonymous"
+            width={40}
+            height={40}
+            style={{ borderRadius: '100%' }}
+          />
         </Link>
       )
     }
