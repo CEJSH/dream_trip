@@ -64,7 +64,7 @@ function Button({
   return (
     <Flex direction="column" align="center" onClick={onClick}>
       <img src={iconUrl} alt="" width={30} height={30} />
-      <Spacing size={6} />
+      <Spacing size={14} />
       <Text typography="t7">{label}</Text>
     </Flex>
   )
