@@ -7,14 +7,12 @@ import Contents from '@components/hotel/Contents'
 import Rooms from '@components/hotel/Rooms'
 import Map from '@components/hotel/Map'
 import RecommendHotels from '@components/hotel/RecommendHotels'
+import ActionButtons from '@components/hotel/ActionButtons'
 
 export default function HotelPage() {
   const { id } = useParams() as { id: string }
 
   const { data, isLoading } = useHotel({ id })
-
-  console.log('data', data)
-  console.log('isLoading', isLoading)
 
   if (data == null || isLoading) return <div>Loading...</div>
 
@@ -24,6 +22,7 @@ export default function HotelPage() {
     <div>
       <Top title={name} subTitle={comment} />
       <Carousel images={images} />
+      <ActionButtons hotel={data} />
       <Rooms hotelId={id} />
       <Contents contents={contents} />
       <Map location={location} />
