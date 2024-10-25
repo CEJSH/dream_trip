@@ -6,19 +6,27 @@ import useShare from '@hooks/useShare'
 import Text from '@shared/Text'
 import Spacing from '@shared/Spacing'
 import { Hotel } from '@models/hotel'
+import useLike from '@hooks/like/useLike'
 
 export default function ActionButtons({ hotel }: { hotel: Hotel }) {
   const share = useShare()
+  const { data: likes, mutate: like } = useLike()
 
-  const { name, comment, mainImageUrl } = hotel
+  const { name, comment, mainImageUrl, id } = hotel
+
+  const isLike = Boolean(likes?.find((like) => like.hotelId === hotel.id))
 
   return (
     <Flex css={containerStyles}>
       <Button
         label="찜하기"
-        onClick={() => {}}
+        onClick={() => {
+          like({ hotel: { name, mainImageUrl, id } })
+        }}
         iconUrl={
-          'https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png'
+          isLike
+            ? 'https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png'
+            : 'https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/heart-64.png'
         }
       />
       <Button

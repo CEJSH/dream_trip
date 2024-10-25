@@ -6,32 +6,45 @@ import Button from './Button'
 import { colors } from '@styles/colorPalette'
 import { useCallback } from 'react'
 import useUser from '@hooks/auth/useUser'
+import Spacing from './Spacing'
 
 export default function Navbar() {
   const location = useLocation()
   const showSignButton =
     ['/signup', '/signin'].includes(location.pathname) === false
-
   const user = useUser()
 
   const renderButton = useCallback(() => {
     if (user != null) {
       console.log(user.photoURL)
       return (
-        <Link to="/my">
-          {/* @TODO */}
-          <img
-            alt="userImage"
-            src={
-              user.photoURL ??
-              'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-64.png'
-            }
-            crossOrigin="anonymous"
-            width={40}
-            height={40}
-            style={{ borderRadius: '100%' }}
-          />
-        </Link>
+        <Flex align={'center'}>
+          <Link to="/my">
+            {/* @TODO */}
+            <img
+              alt="userImage"
+              src={
+                user.photoURL ??
+                'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-64.png'
+              }
+              width={36}
+              height={36}
+              style={{ borderRadius: '100%' }}
+            />
+          </Link>
+          <Spacing size={8} direction="horizontal" />
+          <Link to="/settings">
+            <img
+              alt="settings"
+              src={
+                'https://cdn1.iconfinder.com/data/icons/ionicons-outline-vol-2/512/settings-outline-512.png'
+              }
+              width={36}
+              height={36}
+              style={{ borderRadius: '100%' }}
+            />
+          </Link>
+        </Flex>
       )
     }
     if (showSignButton) {
@@ -45,7 +58,7 @@ export default function Navbar() {
 
   return (
     <Flex css={navbarContainerStyles} justify={'space-between'} align="center">
-      <Link to="/">홈</Link>
+      <Link to="/">Dream Trip</Link>
       {renderButton()}
     </Flex>
   )
