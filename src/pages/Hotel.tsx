@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom'
 import useHotel from '@components/hotel/hooks/useHotel'
 import Carousel from '@components/hotel/Carousel'
-
 import Top from '@shared/Top'
 import Contents from '@components/hotel/Contents'
 import Rooms from '@components/hotel/Rooms'
