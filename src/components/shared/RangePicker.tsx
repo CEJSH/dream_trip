@@ -26,9 +26,7 @@ export default function RangePicker({
 
   const handleDayClick = (dateRange: DateRange | undefined) => {
     if (dateRange == null) return
-    console.log('dateRange', dateRange)
     const { from, to } = dateRange
-    console.log(from, 'from', to, 'to')
     // 1. 중복된 날짜
     if (from && to && isSameDay(from, to)) return
     onChange({

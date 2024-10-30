@@ -16,9 +16,8 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 
 const BaseSelect = styled.select`
   height: 52px;
-  background-color: ${colors.gray};
-  border: none;
-  border-radius: 15px;
+  border: 1px solid ${colors.gray};
+  border-radius: 6px;
   padding: 0 16px;
   cursor: pointer;
 
@@ -29,7 +28,7 @@ const BaseSelect = styled.select`
 
 const Select = forwardRef<
   HTMLSelectElement,
-  SelectProps & { placeholder: string }
+  SelectProps & { placeholder?: string }
 >(function Select({ label, options, value, placeholder, ...props }, ref) {
   return (
     <Flex direction="column">

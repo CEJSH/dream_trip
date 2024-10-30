@@ -60,6 +60,7 @@ const RAW_RUNTIME_STATE =
           ["react-copy-to-clipboard", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:5.1.0"],\
           ["react-day-picker", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:8.8.2"],\
           ["react-dom", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:18.3.1"],\
+          ["react-hook-form", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:7.53.1"],\
           ["react-infinite-scroll-component", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:6.1.0"],\
           ["react-markdown", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:9.0.1"],\
           ["react-query", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:3.39.3"],\
@@ -10240,6 +10241,7 @@ const RAW_RUNTIME_STATE =
           ["react-copy-to-clipboard", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:5.1.0"],\
           ["react-day-picker", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:8.8.2"],\
           ["react-dom", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:18.3.1"],\
+          ["react-hook-form", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:7.53.1"],\
           ["react-infinite-scroll-component", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:6.1.0"],\
           ["react-markdown", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:9.0.1"],\
           ["react-query", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:3.39.3"],\
@@ -18317,6 +18319,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/react-error-overlay-npm-6.0.11-021cdeaa92-8fc9394297.zip/node_modules/react-error-overlay/",\
         "packageDependencies": [\
           ["react-error-overlay", "npm:6.0.11"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-hook-form", [\
+      ["npm:7.53.1", {\
+        "packageLocation": "./.yarn/cache/react-hook-form-npm-7.53.1-127f6fe43d-dd2466359a.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["react-hook-form", "npm:7.53.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:7.53.1", {\
+        "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-65c2ea235e/0/cache/react-hook-form-npm-7.53.1-127f6fe43d-dd2466359a.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["react-hook-form", "virtual:9960d3c7e214dcb0d95b250c9c2abebe6cb09e8390bd899876dd917680f6a76fad791bbfe2c2d48dd8b0bfd161edaeef0432fc688b2b9a4aa77ae5c2f5e821df#npm:7.53.1"],\
+          ["@types/react", "npm:18.3.11"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
