@@ -15,6 +15,7 @@ import { COLLECTIONS } from '@constants'
 
 import { store } from './firebase'
 import { Hotel } from '@models/hotel'
+import { Room } from '@models/room'
 
 export async function getHotels(pageParams?: QuerySnapshot<Hotel>) {
   //pageParams가 없다는 것은 최초의 호출, 있다면 스크롤을 내렸을 때의(다음페이지에 대한) 요청!
@@ -68,4 +69,22 @@ export async function getRecommendHotels(hotelIds: string[]) {
         ...doc.data(),
       }) as Hotel,
   )
+}
+
+export async function getHotelWithRoom({
+  hotelId,
+  roomId,
+}: {
+  hotelId: string
+  roomId: string
+}) {
+  const hotelSnapshot = await getDoc(doc(store, COLLECTIONS.HOTEL, hotelId))
+  const roomSnapshot = await getDoc(
+    doc(hotelSnapshot.ref, COLLECTIONS.ROOM, roomId),
+  )
+
+  return {
+    hotel: hotelSnapshot.data() as Hotel,
+    room: roomSnapshot.data() as Room,
+  }
 }
