@@ -3950,7 +3950,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qs@npm:*":
+"@types/qs@npm:*, @types/qs@npm:^6":
   version: 6.9.16
   resolution: "@types/qs@npm:6.9.16"
   checksum: 10c0/a4e871b80fff623755e356fd1f225aea45ff7a29da30f99fddee1a05f4f5f33485b314ab5758145144ed45708f97e44595aa9a8368e9bbc083932f931b12dbb6
@@ -6732,6 +6732,7 @@ __metadata:
     "@testing-library/user-event": "npm:^13.2.1"
     "@types/jest": "npm:^27.0.1"
     "@types/node": "npm:^16.7.13"
+    "@types/qs": "npm:^6"
     "@types/react": "npm:^18.0.0"
     "@types/react-beautiful-dnd": "npm:^13"
     "@types/react-copy-to-clipboard": "npm:^5"
@@ -6745,9 +6746,11 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.1"
     firebase: "npm:^11.0.0"
     prettier: "npm:^3.3.3"
+    qs: "npm:^6.13.0"
     react: "npm:^18.3.1"
     react-beautiful-dnd: "npm:^13.1.1"
     react-copy-to-clipboard: "npm:^5.1.0"
+    react-day-picker: "npm:8.8.2"
     react-dom: "npm:^18.3.1"
     react-infinite-scroll-component: "npm:^6.1.0"
     react-markdown: "npm:^9.0.1"
@@ -12950,7 +12953,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.13.0":
+"qs@npm:6.13.0, qs@npm:^6.13.0":
   version: 6.13.0
   resolution: "qs@npm:6.13.0"
   dependencies:
@@ -13058,6 +13061,16 @@ __metadata:
   peerDependencies:
     react: ^15.3.0 || 16 || 17 || 18
   checksum: 10c0/de70d9f9c2d17cee207888ed791d4a042c300e5ca732503434d49e6745cff56c0d5ebcc82ab86237e9c2248e636d1d031b9f9cf9913ecec61d82a0e5ebc93881
+  languageName: node
+  linkType: hard
+
+"react-day-picker@npm:8.8.2":
+  version: 8.8.2
+  resolution: "react-day-picker@npm:8.8.2"
+  peerDependencies:
+    date-fns: ^2.28.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/2ec239cb3a800f2b6097cc5eecdae5d3023f26546da904f3169835ed4ea0c575fb8b22e83414178322df49124da0963e41bec9270375523a0ae4616843a62d84
   languageName: node
   linkType: hard
 

@@ -16,7 +16,6 @@ export default function Navbar() {
 
   const renderButton = useCallback(() => {
     if (user != null) {
-      console.log(user.photoURL)
       return (
         <Flex align={'center'}>
           <Link to="/my">

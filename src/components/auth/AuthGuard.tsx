@@ -13,7 +13,6 @@ export default function AuthGard({ children }: { children: React.ReactNode }) {
     if (user == null) {
       //TODO
     } else {
-      console.log('user', user)
       setUser({
         uid: user.uid,
         email: user.email ?? '',

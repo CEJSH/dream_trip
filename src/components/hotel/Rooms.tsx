@@ -1,5 +1,8 @@
+import qs from 'qs'
+
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import { useNavigate } from 'react-router-dom'
 
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
@@ -8,12 +11,16 @@ import ListRow from '@shared/ListRow'
 import Spacing from '@shared/Spacing'
 import Button from '@shared/Button'
 import addDelimiter from '@utils/addDelimiter'
+import { useAlertContext } from '@contexts/AlertContext'
 
 import useRooms from './hooks/useRoom'
+import useUser from '@hooks/auth/useUser'
 
 export default function Rooms({ hotelId }: { hotelId: string }) {
+  const navigate = useNavigate()
+  const { open } = useAlertContext()
   const { data } = useRooms({ hotelId })
-  console.log(data)
+  const user = useUser()
 
   return (
     <Container>
@@ -29,6 +36,16 @@ export default function Rooms({ hotelId }: { hotelId: string }) {
         {data?.map((room) => {
           const 마감임박인가 = room.avaliableCount === 1
           const 매진인가 = room.avaliableCount === 0
+
+          // 쿼리스트링을 이욯아여 정보를 저장하도록 한다
+
+          const params = qs.stringify(
+            {
+              roomId: room.id,
+              hotelId,
+            },
+            { addQueryPrefix: true },
+          )
 
           return (
             <ListRow
@@ -59,7 +76,23 @@ export default function Rooms({ hotelId }: { hotelId: string }) {
                 />
               }
               right={
-                <Button disabled={매진인가}>
+                <Button
+                  size="medium"
+                  disabled={매진인가}
+                  onClick={() => {
+                    if (user == null) {
+                      // 로그인전
+                      open({
+                        title: '로그인이 필요한 기능입니다.',
+                        onButtonClick: () => {
+                          navigate('/signin')
+                        },
+                      })
+                      return
+                    }
+                    navigate(`/schedule${params}`)
+                  }}
+                >
                   {매진인가 === true ? '매진' : '선택'}
                 </Button>
               }
