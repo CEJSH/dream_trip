@@ -5,15 +5,34 @@ import {
   DragDropContext,
   Droppable,
   Draggable,
-  DraggableProps,
   DropResult,
   DroppableProps,
 } from 'react-beautiful-dnd'
 import { useEffect, useState } from 'react'
+import { Virtuoso } from 'react-virtuoso'
 import useEditLike from '@components/settings/like/hooks/useEditLike'
+import Like from '@models/like'
+
+function generateMocks() {
+  const mocks = []
+
+  for (let i = 0; i < 1000; i++) {
+    mocks.push({
+      id: `${i}`,
+      hotelId: `hotel ${i}`,
+      hotelName: `hotel ${i}`,
+      hotelMainImageUrl: `hotel ${i}`,
+      userId: '',
+      order: i,
+    } as Like)
+  }
+  return mocks
+}
 
 function LikePage() {
   const { data, isEdit, reorder, save } = useEditLike()
+
+  const mocks = generateMocks()
 
   const handleDragEnd = (result: DropResult) => {
     if (result.destination == null) return
@@ -31,9 +50,11 @@ function LikePage() {
               ref={droppableProps.innerRef}
               {...droppableProps.droppableProps}
             >
-              {data?.map((like, index) => {
-                return (
-                  <Draggable key={like.id} draggableId={like.id} index={index}>
+              <Virtuoso
+                useWindowScroll
+                increaseViewportBy={0}
+                itemContent={(idx, like) => (
+                  <Draggable key={like.id} draggableId={like.id} index={idx}>
                     {(draggableProps) => (
                       <li
                         ref={draggableProps.innerRef}
@@ -52,8 +73,9 @@ function LikePage() {
                       </li>
                     )}
                   </Draggable>
-                )
-              })}
+                )}
+                data={mocks}
+              />
             </ul>
           )}
         </StrictModeDroppable>
