@@ -50,6 +50,9 @@ export default function RangePicker({
         defaultMonth={today}
         onSelect={handleDayClick}
         selected={selected}
+        disabled={{
+          before: addDays(new Date(), 1),
+        }}
       />
     </Container>
   )

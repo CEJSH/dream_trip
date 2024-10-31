@@ -1,6 +1,8 @@
 import { getHotelWithRoom } from '@remote/hotel'
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import { useAlertContext } from '@contexts/AlertContext'
+import { makeReservation } from '@remote/reservation'
+import { Reservation } from '@models/reservation'
 
 function useReservation({
   hotelId,
@@ -27,7 +29,21 @@ function useReservation({
     },
   )
 
-  return { data, isLoading }
+  const { mutateAsync } = useMutation(
+    (newReservation: Reservation) => makeReservation(newReservation),
+    {
+      onError: () => {
+        open({
+          title: '알 수 없는 에러가 발생했습니다. 잠시 후 다시 시도해 주세요',
+          onButtonClick: () => {
+            window.history.back()
+          },
+        })
+      },
+    },
+  )
+
+  return { data, isLoading, makeReservation: mutateAsync }
 }
 
 export default useReservation
