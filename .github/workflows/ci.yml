@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
+      - run: corepack enable
+      - run: corepack prepare yarn@4.5.1 --activate
       - run: yarn install
       - run: yarn lint
   build:
@@ -23,5 +25,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
+      - run: corepack enable
+      - run: corepack prepare yarn@4.5.1 --activate
       - run: yarn install
       - run: CI='false' yarn build
